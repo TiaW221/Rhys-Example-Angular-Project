@@ -1,0 +1,39 @@
+h1 {color: #02047e
+}
+.banner {
+  background-color: #a7f3e6;
+  color: rgba(0, 0, 0, 0);
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin: 0 15px;
+
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 3rem; /* space between items */
+}
+
+//a:link, a:visited {
+//  color: white;
+//  text-decoration: underline;
+//  cursor: auto;
+//}
+//
+//a:link:active, a:visited:active {
+//  color: black;
+//}
+
