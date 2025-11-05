@@ -2,3 +2,23 @@
 <h1> Help </h1>
 <p> that's page 1</p>
 <app-button (changeCounter)="onCounterChanged($event)"></app-button>
+
+<!--Uppercase pipe-->
+<p> {{'hello world one' | uppercase }}</p>
+<p> {{'hello world one' | uppercase | slice: 1: 6}}</p>
+<p> {{'hello world two ' | lowercase }}</p>
+<p> {{'hello WORLD three' | titlecase }}</p>
+
+
+<p>{{today}}</p>
+<p>{{today | date}}</p>
+<p> {{today | date: 'dd/mm/yyyy'}}</p>
+<p> {{today | date: 'short'}}</p>
+
+<!--turns decimal into percentage-->
+<p> {{0.75 | percent}}</p>
+
+<!--changes money into currency-->
+<p>{{currencyValue | currency: 'EUR'}} </p>
+
+<p> {{`Hello World` | slice: 0: 5}}</p>
