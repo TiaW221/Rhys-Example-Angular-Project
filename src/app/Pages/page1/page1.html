@@ -1,4 +1,101 @@
 <app-title [titlePage] = "'My First Page'"></app-title>
-<h1> Help </h1>
+<h1> Matt & Rhys Example Page </h1>
 <p> that's page 1</p>
 <app-button (changeCounter)="onCounterChanged($event)"></app-button>
+
+<!--Uppercase pipe-->
+<p> {{'hello world one' | uppercase }}</p>
+<p> {{'hello world one' | uppercase | slice: 1: 6}}</p>
+<p> {{'hello world two ' | lowercase }}</p>
+<p> {{'hello WORLD three' | titlecase }}</p>
+
+
+<p>{{today}}</p>
+<p>{{today | date}}</p>
+<p> {{today | date: 'dd/mm/yyyy'}}</p>
+<p> {{today | date: 'short'}}</p>
+
+<!--turns decimal into percentage-->
+<p> {{0.75 | percent}}</p>
+
+<!--changes money into currency-->
+<p>{{currencyValue | currency: 'EUR'}} </p>
+
+<p> {{`Hello World` | slice: 0: 5}}</p>
+
+
+<!--Matt Exercises -->
+<!--Display "learning angular is fun" in uppercase, lowercase, and titlecase.-->
+<p> {{'learning angular is fun' | uppercase}}</p>
+<p> {{'LEARNING ANGULAR IS FUN' | lowercase}}</p>
+<p> {{'learning angular is fun' | titlecase}}</p>
+
+<!--Use the slice pipe to show only the first 8 characters of "Apprenticeship".-->
+<p> {{`Apprenticeship` | slice : 0:8}}</p>
+<!--Combine pipes — show "formatting pipes" as uppercase, but only the first 6 letters.-->
+<p> {{'formatting pipes' | uppercase | slice: 0:6}}</p>
+
+
+<!--2. Working with Dates
+In your component:
+today = new Date();
+<--Display today’s date using the default date pipe.-->
+<p> {{today}}</p>
+
+<!--Format the date as:-->
+<!--dd/MM/yyyy-->
+<p> {{today | date: 'dd/MM/yyyy'}}</p>
+<!--EEEE, MMMM d, y (e.g. “Tuesday, November 5, 2025”)-->
+<p> {{today | date: 'EEEE, MMMM, d, y'}}</p>
+<!--Use the shortDate and fullDate formats.-->
+<p> {{today | date: 'shortDate'}}</p>
+<p> {{today | date: 'longDate'}}</p>
+<!--Create a variable meetingDate = new Date('2025-12-25T14:30:00') and:-->
+<!--Display just the time.-->
+<p> {{meetingDate | date: 'shortTime'}} </p>
+<p>{{meetingDate | date: 'mediumTime'}} </p>
+<p>{{meetingDate | date: 'longTime'}} </p>
+<p>{{meetingDate | date: 'fullTime'}} </p>
+<!--Display the date and time in dd MMM yyyy, hh:mm a format.-->
+<p>{{meetingDate | date: 'dd MMM yyyy, hh:mm a'}}</p>
+
+<!--3. Numbers, Percentages, and Currency-->
+<!--In your component:-->
+<!--price = 1234.5;-->
+<!--discount = 0.15;-->
+<!--Display the price as:-->
+<!--A number with 2 decimal places.-->
+<p> {{price | number: '1.2-2'}}</p>
+<!--A currency in GBP, EUR, and USD.-->
+<p> {{price | currency: 'GBP'}}</p>
+<p> {{price | currency: 'EUR'}}</p>
+<p> {{price | currency: 'USD'}}</p>
+<!--Show the discount as a percentage.-->
+<p> {{discount | percent}}</p>
+<!--Show the final price after discount:-->
+<p> {{finalPrice}}</p>
+<!--and display it in currency format.-->
+<!--💡 Hint: {{ finalPrice | currency:'GBP' }}-->
+<p> {{finalPrice | currency: 'GBP'}}</p>
+
+<!--4. Customising Output-->
+<!--Create an array:-->
+<!--students = ['Alice', 'Bob', 'Charlie', 'Daisy', 'Ethan'];-->
+<!--Use slice to display:-->
+<!--Only the first 3 students.-->
+<p> {{students | slice: 0: 3 }}</p>
+<!--Only the last 2 students.-->
+<p> {{students | slice:  3: 5}}</p>
+<!--Use uppercase and lowercase pipes to style the names differently.-->
+<!--can't use uppercase with string pipe-->
+<p> {{students | slice: 0: 3 }}</p>
+<p>{{ students[3] | uppercase }}</p>
+<p>{{ students[2] | lowercase }}</p>
+<!--  5. Combining Pipes-->
+<!--  Given:-->
+<!--  quote = 'angular pipes make data formatting simple';-->
+<!--  Show only the first 20 characters, in titlecase.-->
+  <p> {{quote| slice: 0: 20}}</p>
+<!--  Display the quote in uppercase, but only between characters 8 and 18.-->
+<p> {{quote | uppercase | slice: 8: 18 }}</p>
+
