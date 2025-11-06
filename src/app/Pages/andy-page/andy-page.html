@@ -1,0 +1,16 @@
+<app-title [titlePage] = "'Andy Work Page'"></app-title>
+
+
+<h2> Input Box </h2>
+<!--input creates a text box-->
+<!--NgModel is angular's way of binding the input box to the message variable-->
+<input [(ngModel)] ="message" type="text" placeholder="message"> <br>
+<!--when I click the button, it will save the message through the SaveMessage function I've created-->
+<button (click) ="saveMessage()"> Save Message </button>
+
+
+<!--ANDY TASK-->
+
+<!--<button (click)="callRandomQuote(0,2)">Random quote generator</button>-->
+<button (click)="callRandomQuote2()">Random quote generator</button>
+<p>{{ randomQuote | uppercase }}</p>
