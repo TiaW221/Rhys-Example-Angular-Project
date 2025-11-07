@@ -1,0 +1,48 @@
+<app-title [titlePage] = "'To do list'"></app-title>
+
+<!--// 3. To-Do List Component-->
+<!--// Create a todo-list component that:-->
+<!--//   Has an input field and an “Add Task” button.-->
+<!--// Displays a list of tasks using *ngFor.-->
+<!--// Adds a tick next to tasks when clicked.-->
+<!--// Tip: Use an array like tasks = [{ text: 'Learn Pipes', done: false }] and toggle done in the template. }-->
+
+
+
+
+
+<!--<div class="todo-container">-->
+<!--  <h2>To-Do List</h2>-->
+<!--  <input [(ngModel)]="newTask" placeholder="Enter a task" />-->
+<!--  <button (click)="addTask()">Add Task</button>-->
+
+<!--  <ul>-->
+<!--    <li *ngFor="let task of tasks">-->
+<!--      {{ task.name }}-->
+<!--      <button (click)="toggleTask(task)">-->
+<!--        {{ task.completed ? '✅ ' : '☐ Not Done' }}-->
+<!--      </button>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+<!--Using @for loop instead-->
+
+<div class="todo-container">
+  <h2>To-Do List</h2>
+  <input [(ngModel)]="newTask" placeholder="Enter a task" />
+  <button (click)="addTask()">Add Task</button>
+
+  <ul>
+    @for (task of tasks; track task.id) {
+      <li>
+        {{ task.name }}
+        <button (click)="toggleTask(task)">
+          {{ task.completed ? '✅' : '☐ Not Done' }}
+        </button>
+      </li>
+    }
+  </ul>
+  --------------------------------
