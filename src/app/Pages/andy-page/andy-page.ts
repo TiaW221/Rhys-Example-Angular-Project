@@ -47,9 +47,9 @@ export class AndyPage {
     'Experience is the name everyone gives to their mistakes.'
   ];
 
-  @Input() randomQuote!:string;
+  @Input() randomQuote!: string;
 
-  callRandomQuote(min:number, max:number) {
+  callRandomQuote(min: number, max: number) {
     // This line is good for dynamically generating a random number between min and max
     // like between 5 - 10
     // let randomNum = Math.round(Math.random() * (max - min)) + min;
@@ -58,8 +58,8 @@ export class AndyPage {
     // console.log(randomString);
   }
 
-    callRandomQuote2() {
-    let randomNum1 = Math.round(Math.random() * (this.quotes.length-1) );
+  callRandomQuote2() {
+    let randomNum1 = Math.round(Math.random() * (this.quotes.length - 1));
     let randomString = this.quotes[randomNum1];
 
     this.randomQuote = randomString;
@@ -68,6 +68,5 @@ export class AndyPage {
     console.log(randomString);
 
   }
-
 }
 

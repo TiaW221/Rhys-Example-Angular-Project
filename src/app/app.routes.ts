@@ -2,6 +2,7 @@ import {Routes} from '@angular/router';
 import {Page1} from './Pages/page1/page1';
 import {Page2} from './Pages/page2/page2';
 import {AndyPage} from './Pages/andy-page/andy-page';
+import {Todolist} from './todolist/todolist';
 
 export const routes: Routes = [
   {
@@ -19,5 +20,10 @@ export const routes: Routes = [
     component: AndyPage,
     title: 'AndyPage',
   },
+  {
+    path: 'Todolist',
+    component: Todolist,
+    title: 'Todolist',
+  }
 ];
 
